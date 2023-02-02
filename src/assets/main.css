@@ -7,8 +7,15 @@
 
   font-weight: normal;
 }
+.body {
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;;
+}
 
-div {
+.main {  
   display:flex;
   align-items: center;
   justify-content: center;;
@@ -16,7 +23,9 @@ div {
   height: 250px;
   background-color: aqua;
   border-radius: 40px;
+  margin-left: 30px;
 }
+
 p {
   color: black;
   font-size: large;
