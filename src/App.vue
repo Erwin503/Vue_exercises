@@ -1,7 +1,11 @@
 <template>
-  {{ show() }}
   <div class="body">
-    <div class="main"></div>
+    <div class="main">
+      <button @click="show()">On click</button>
+    </div>
+    <div class="main">
+      <button v-on:mouseover="show()">Come here</button>
+    </div>
   </div>
 </template>
 
