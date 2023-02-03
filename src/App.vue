@@ -1,10 +1,7 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>{{ name }}</p>
-    </div>
-    <div class="main">
-      <p>{{ surn }}</p>
+      <a :href="page">Tap here)</a>
     </div>
   </div>
 </template>
@@ -13,8 +10,7 @@
 export default {
   data() {
     return {
-      name: "Ervin",
-      surn: "Smith",
+      page: "page.html",
     };
   },
 };
