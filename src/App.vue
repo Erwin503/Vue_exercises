@@ -3,19 +3,20 @@
     <div class="main">
       <button @click="show()">On click</button>
     </div>
-    <div class="main">
-      <button v-on:mouseover="show()">Come here</button>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {},
+  data() {
+    return {
+      num1: 1,
+      num2: 2,
+    };
+  },
   methods: {
     show: function () {
-      var date = new Date();
-      alert(date);
+      alert(this.num1 + this.num2);
     },
   },
 };
