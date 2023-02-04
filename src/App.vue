@@ -1,23 +1,21 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>{{ num ** 2 }}</p>
+      <button @click="show(2)">2</button>
     </div>
     <div class="main">
-      <p>{{ num1 + num2 + num3 }}</p>
+      <button @click="show(3)">3</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      num: 5,
-      num1: 1,
-      num2: 2,
-      num3: 3,
-    };
+  data() {},
+  methods: {
+    show: function (i) {
+      alert(i ** 2);
+    },
   },
 };
 </script>
