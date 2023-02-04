@@ -1,13 +1,12 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>{{ text }}</p>
+      <p>{{ cost }}</p>
+      <p>{{ amount }}</p>
+      <p>{{ price }}</p>
     </div>
     <div class="main">
       <button @click="change(text)">+</button>
-    </div>
-    <div class="main">
-      <button @click="achange(text)">-</button>
     </div>
   </div>
 </template>
@@ -16,15 +15,18 @@
 export default {
   data() {
     return {
-      text: "Ervin",
+      cost: 10,
+      amount: 2,
     };
   },
   methods: {
     change: function (i) {
-      this.text = this.text + " " + "Ervin";
+      this.cost = this.cost + 1;
     },
-    achange: function (i) {
-      this.text = "Ervin";
+  },
+  computed: {
+    price: function () {
+      return this.cost * this.amount;
     },
   },
 };
