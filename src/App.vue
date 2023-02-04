@@ -16,9 +16,7 @@ export default {
   methods: {
     show: function () {
       var i = new Date();
-      var num = i.getDays();
-      res = cape(num);
-      alert(res);
+      alert(this.cape(i.getDay()));
     },
     cape: function (num) {
       switch (num) {
