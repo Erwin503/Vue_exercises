@@ -1,20 +1,30 @@
 <template>
   <div class="body">
     <div class="main">
-      <button @click="show(2)">2</button>
+      <p>{{ text }}</p>
     </div>
     <div class="main">
-      <button @click="show(3)">3</button>
+      <button @click="change(text)">+</button>
+    </div>
+    <div class="main">
+      <button @click="achange(text)">-</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {},
+  data() {
+    return {
+      text: "Ervin",
+    };
+  },
   methods: {
-    show: function (i) {
-      alert(i ** 2);
+    change: function (i) {
+      this.text = this.text + " " + "Ervin";
+    },
+    achange: function (i) {
+      this.text = "Ervin";
     },
   },
 };
