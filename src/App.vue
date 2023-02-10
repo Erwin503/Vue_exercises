@@ -1,12 +1,13 @@
 <template>
   <div class="body">
     <div class="main">
-      <a href="fake.html" v-on:click.prevent
-        ><p>Tap here and nothing will happen</p></a
-      >
+      <p v-if="visible">Ervin</p>
     </div>
     <div class="main">
-      <button v-on:click.once="haha">haha</button>
+      <button @click="hide" v-if="visible">hide</button>
+    </div>
+    <div class="main">
+      <button @click="show" v-if="!visible">show</button>
     </div>
   </div>
 </template>
@@ -15,14 +16,15 @@
 export default {
   data() {
     return {
-      cost: 10,
-      amount: 2,
+      visible: false,
     };
   },
   methods: {
-    haha: function (i) {
-      alert("haha");
-      return false;
+    hide: function () {
+      this.visible = false;
+    },
+    show: function () {
+      this.visible = true;
     },
   },
 };
