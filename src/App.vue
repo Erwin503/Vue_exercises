@@ -1,13 +1,16 @@
 <template>
   <div class="body">
     <div class="main">
-      <p v-if="visible">Ervin</p>
+      <p v-if="visible[0]">Ervin</p>
+      <button @click="toggle(0)">toggle</button>
     </div>
     <div class="main">
-      <button @click="hide" v-if="visible">hide</button>
+      <p v-if="visible[1]">Ervin</p>
+      <button @click="toggle(1)">toggle</button>
     </div>
     <div class="main">
-      <button @click="show" v-if="!visible">show</button>
+      <p v-if="visible[2]">Ervin</p>
+      <button @click="toggle(2)">toggle</button>
     </div>
   </div>
 </template>
@@ -16,15 +19,12 @@
 export default {
   data() {
     return {
-      visible: false,
+      visible: [true, true, true],
     };
   },
   methods: {
-    hide: function () {
-      this.visible = false;
-    },
-    show: function () {
-      this.visible = true;
+    toggle: function (n) {
+      this.visible[n] = !this.visible[n];
     },
   },
 };
