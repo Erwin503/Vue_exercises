@@ -1,7 +1,9 @@
 <template>
   <div class="body">
     <div class="main">
-      <p v-for="i in 30">{{ i }}</p>
+      <template v-for="i in items">
+        <p v-if="i > 0">{{ i }}</p>
+      </template>
     </div>
   </div>
 </template>
@@ -9,7 +11,7 @@
 <script>
 export default {
   data() {
-    return {};
+    return { items: [1, -2, 3, -4, 5] };
   },
   methods: {},
 };
