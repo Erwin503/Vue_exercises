@@ -1,18 +1,18 @@
 <template>
   <div class="body">
     <div class="main">
-      <div v-for="i in items">
-        <p>{{ i }}</p>
-        <p class="divider"></p>
-      </div>
+      <ul>
+        <li v-for="i in hrefs">
+          <a href="{{ i.href }}">{{ i.text }}</a>
+        </li>
+      </ul>
     </div>
     <div class="main">
-      <ul>
-        <template v-for="i in items">
-          <li>{{ i }}</li>
-          <li class="divider"></li>
-        </template>
-      </ul>
+      <tr v-for="p in products">
+        <td>{{ p.name }}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.quantity }}</td>
+      </tr>
     </div>
   </div>
 </template>
@@ -21,7 +21,28 @@
 export default {
   data() {
     return {
-      items: [1, 2, 3],
+      hrefs: [
+        { href: "1.html", text: "text1" },
+        { href: "2.html", text: "text2" },
+        { href: "3.html", text: "text3" },
+      ],
+      products: [
+        {
+          name: "product1",
+          price: 100,
+          quantity: 5,
+        },
+        {
+          name: "product2",
+          price: 200,
+          quantity: 4,
+        },
+        {
+          name: "product3",
+          price: 300,
+          quantity: 3,
+        },
+      ],
     };
   },
   methods: {
