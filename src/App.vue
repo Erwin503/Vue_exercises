@@ -1,10 +1,15 @@
 <template>
   <div class="body">
     <div class="main">
-      <p v-if="age < 18">Подросток</p>
-      <p v-else-if="age > 18 && age < 26">молодой человек</p>
-      <p v-else-if="age > 25">мужчина</p>
+      <div v-if="visible">
+        <p>ERVIN</p>
+        <p>ERVIN</p>
+        <p>ERVIN</p>
+      </div>
     </div>
+    <dib class="main">
+      <button @click="toggle">Toggle</button>
+    </dib>
   </div>
 </template>
 
@@ -12,13 +17,13 @@
 export default {
   data() {
     return {
-      age: 25,
+      visible: true,
     };
   },
-  // methods: {
-  //   toggle: function (n) {
-  //     this.visible[n] = !this.visible[n];
-  //   },
-  // },
+  methods: {
+    toggle: function (n) {
+      this.visible = !this.visible;
+    },
+  },
 };
 </script>
