@@ -1,22 +1,16 @@
 <template>
   <div class="body">
     <div class="main">
-      <div v-show="visible">
-        <p>ERVIN</p>
-        <p>ERVIN</p>
-        <p>ERVIN</p>
-        <!-- 2 задание
-        v-show отрисовывается всегда и меняется только css
-        v-if не отрисовывается если значение ложно
-        3 задание
-        v-show, если переключения будут частыми, и v-if, если условие может и не измениться во время исполнения 
-        4 задание
-        нельзя использовать v-else-->
-      </div>
+      <div v-for="i in items">{{ i }}</div>
     </div>
-    <dib class="main">
-      <button @click="toggle">Toggle</button>
-    </dib>
+    <div class="main">
+      <div v-for="i in items">{{ i ** 2 }}</div>
+    </div>
+    <div class="main">
+      <ul>
+        <li v-for="i in items">{{ i }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -24,7 +18,7 @@
 export default {
   data() {
     return {
-      visible: true,
+      items: [1, 2, 3, 4, 5],
     };
   },
   methods: {
