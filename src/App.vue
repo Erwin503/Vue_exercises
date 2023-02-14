@@ -2,7 +2,26 @@
   <div class="body">
     <div class="main">
       <ul>
-        <li v-for="(i, key) in arr">{{ key }}</li>
+        <li v-for="i in obj">{{ i }}</li>
+      </ul>
+    </div>
+    <div class="main">
+      <ul>
+        <li v-for="(elem, key) in obj">{{ key }} - {{ elem }}</li>
+      </ul>
+    </div>
+    <div class="main">
+      <ul>
+        <li v-for="(elem, key, num) in obj">
+          {{ key }} - {{ elem }} - {{ num }}
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <ul>
+        <li v-for="(elem, key, num) in obj">
+          {{ key }} - {{ elem }} - {{ num + 1 }}
+        </li>
       </ul>
     </div>
   </div>
@@ -12,7 +31,11 @@
 export default {
   data() {
     return {
-      arr: ["x", "y", "z"],
+      obj: {
+        user1: "100$",
+        user2: "200$",
+        user3: "300$",
+      },
     };
   },
   methods: {
