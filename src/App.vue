@@ -1,27 +1,17 @@
 <template>
   <div class="body">
     <div class="main">
-      <ul>
-        <li v-for="i in obj">{{ i }}</li>
-      </ul>
+      <div v-for="i in items">
+        <p>{{ i }}</p>
+        <p class="divider"></p>
+      </div>
     </div>
     <div class="main">
       <ul>
-        <li v-for="(elem, key) in obj">{{ key }} - {{ elem }}</li>
-      </ul>
-    </div>
-    <div class="main">
-      <ul>
-        <li v-for="(elem, key, num) in obj">
-          {{ key }} - {{ elem }} - {{ num }}
-        </li>
-      </ul>
-    </div>
-    <div class="main">
-      <ul>
-        <li v-for="(elem, key, num) in obj">
-          {{ key }} - {{ elem }} - {{ num + 1 }}
-        </li>
+        <template v-for="i in items">
+          <li>{{ i }}</li>
+          <li class="divider"></li>
+        </template>
       </ul>
     </div>
   </div>
@@ -31,11 +21,7 @@
 export default {
   data() {
     return {
-      obj: {
-        user1: "100$",
-        user2: "200$",
-        user3: "300$",
-      },
+      items: [1, 2, 3],
     };
   },
   methods: {
