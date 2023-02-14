@@ -1,13 +1,9 @@
 <template>
   <div class="body">
     <div class="main">
-      <p v-if="day === 1">Monday</p>
-      <p v-if="day === 2">Tuesday</p>
-      <p v-if="day === 3">Wednesday</p>
-      <p v-if="day === 4">Thursday</p>
-      <p v-if="day === 5">Friday</p>
-      <p v-if="day === 6">Saturday</p>
-      <p v-if="day === 7">Sunday</p>
+      <p v-if="age < 18">Подросток</p>
+      <p v-else-if="age > 18 && age < 26">молодой человек</p>
+      <p v-else-if="age > 25">мужчина</p>
     </div>
   </div>
 </template>
@@ -16,7 +12,7 @@
 export default {
   data() {
     return {
-      day: 4,
+      age: 25,
     };
   },
   // methods: {
