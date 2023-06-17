@@ -1,20 +1,14 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>Выберете родной язык.</p>
-      <input name="radio" type="radio" v-model="choice" value="rus" />
-      <span> Русский</span><br />
+      <p>В каком городе вы живете.</p>
+      <select v-model="selected">
+        <option>Симферополь</option>
+        <option>Москва</option>
+        <option>Питер</option>
+      </select>
 
-      <input name="radio" type="radio" v-model="choice" value="tat" />
-      <span> Крымскотатарский</span><br />
-
-      <input name="radio" type="radio" v-model="choice" value="eng" />
-      <span> Английский</span><br />
-    </div>
-    <div class="main">
-      <p v-if="choice == 'rus'">Русский язык</p>
-      <p v-if="choice == 'tat'">Къырымтатар тили</p>
-      <p v-if="choice == 'eng'">English language</p>
+      <p>{{ selected }}</p>
     </div>
   </div>
 </template>
@@ -23,7 +17,7 @@
 export default {
   data() {
     return {
-      choice: "",
+      selected: "",
     };
   },
 
