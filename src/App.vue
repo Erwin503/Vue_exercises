@@ -1,13 +1,13 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>Введите текст</p>
-      <input v-model="newItem" />
-    </div>
-    <div class="main">
-      <button @click="addItem">Press me!</button>
+      <p>Нажмите на элемент списка для удаления</p>
       <ul>
-        <li v-for="(item, index) in arr" :key="index">
+        <li
+          v-for="(item, index) in arr"
+          :key="index"
+          @click="removeItem(index)"
+        >
           {{ item }}
         </li>
       </ul>
@@ -21,14 +21,13 @@ let date = new Date();
 export default {
   data() {
     return {
-      newItem: "",
-      arr: ["lala", "haha"],
+      arr: ["1", "2", "3", "4", "5"],
     };
   },
 
   methods: {
-    addItem: function () {
-      this.arr.unshift(this.newItem);
+    removeItem: function (index) {
+      this.arr.splice(index, 1);
     },
   },
 };
