@@ -1,13 +1,12 @@
 <template>
-  <p>{{ message }}</p>
+  <p>{{ name }} {{ surn }} {{ age }}</p>
 </template>
 
 <script>
 export default {
+  props: ["name", "surn", "age"],
   data() {
-    return {
-      message: "Компонент Employee успешно подключен.",
-    };
+    return {};
   },
 };
 </script>
