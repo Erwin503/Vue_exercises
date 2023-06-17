@@ -43,8 +43,11 @@ p {
   font-size: large;
 }
 
-.test{
+.done{
   font-family: Consolas;
   font-size: 1.5em;
-  color: red;
+  color: rebeccapurple;
+}
+.selected{
+  color: #54916c;
 }

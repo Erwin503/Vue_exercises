@@ -1,11 +1,11 @@
 <template>
-
   <div class="main">
     <div id="cmd_head">
       <p>Console</p>
     </div>
+
     <div id="cmd">
-      <p :class="cssClasses">Тест</p>
+      <p :class="obj">оригинальный текст</p>
     </div>
   </div>
 </template>
@@ -14,7 +14,10 @@
 export default {
   data() {
     return {
-      cssClasses: "test",
+      obj: {
+        done: false,
+        selected: true,
+      },
     };
   },
 
