@@ -1,8 +1,7 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>Task 60</p>
-      <Emploee :name_person="name" :salary="salary" :age="age" />
+    <Emploee :name_person="name" :salary="salary" :age="age" />
     </div>
   </div>
 </template>
