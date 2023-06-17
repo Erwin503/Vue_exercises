@@ -1,22 +1,25 @@
 <template>
-  <BMW @show="BMW" @show1="bmw" />
+  <div id="cmd">
+    <Emploee @first="one" @second="two" />
+  </div>
 </template>
 
 <script>
-import BMW from "./components/Emploee.vue";
+import Emploee from "./components/Emploee.vue";
+
 export default {
   data() {
     return {};
   },
   components: {
-    BMW,
+    Emploee,
   },
   methods: {
-    BMW() {
-      alert("Alex, Jason, Paul");
+    one() {
+      alert("Первая функция");
     },
-    bmw() {
-      alert("Jace, Tom, Ben");
+    two() {
+      alert("Вторая функция");
     },
   },
 };

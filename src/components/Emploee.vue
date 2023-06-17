@@ -1,27 +1,27 @@
+<template>
+  <div class="body">
+    <div class="main">
+      <button @click="x">Button number 1</button>
+    </div>
+    <div class="main">
+      <button @click="y">Button number 2</button>
+    </div>
+  </div>
+</template>
+
 <script>
 export default {
-  emits: ["show", "show1"],
+  emits: ["first", "second"],
   data() {
     return {};
   },
   methods: {
-    aaa() {
-      this.$emit("show");
+    x() {
+      this.$emit("first");
     },
-    bbb() {
-      this.$emit("show1");
+    y() {
+      this.$emit("second");
     },
   },
 };
 </script>
-
-<template>
-  <div class="body">
-    <div class="main">
-      <button @click="aaa">BMW</button>
-    </div>
-    <div class="main">
-      <button @click="bbb">bmw</button>
-    </div>
-  </div>
-</template>
