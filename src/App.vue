@@ -1,11 +1,19 @@
 <template>
-  <div class="main">
-    <div id="cmd_head">
-      <p>Console</p>
+  <div class="body">
+    <div class="main">
+      <div id="cmd">
+        <p :class="obj">1</p>
+        <p class="done">2</p>
+      </div>
     </div>
-
-    <div id="cmd">
-      <p :class="obj">оригинальный текст</p>
+    <div class="main">
+      <button @click="hide">Hide</button>
+    </div>
+    <div class="main">
+      <button @click="show">Show</button>
+    </div>
+    <div class="main">
+      <button @click="toggle">Toggle</button>
     </div>
   </div>
 </template>
@@ -15,12 +23,22 @@ export default {
   data() {
     return {
       obj: {
-        done: false,
-        selected: true,
+        hidden: true,
+        done: true,
       },
     };
   },
 
-  methods: {},
+  methods: {
+    hide: function () {
+      this.obj.hidden = true;
+    },
+    show: function () {
+      this.obj.hidden = false;
+    },
+    toggle: function () {
+      this.obj.hidden = !this.obj.hidden;
+    },
+  },
 };
 </script>
