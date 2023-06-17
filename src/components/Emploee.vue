@@ -1,27 +1,48 @@
 <template>
-  <div class="body">
-    <div class="main">
-      {{ name }}
-      {{ surn }}
+  <template v-if="!isEdit">
+    <div class="body">
+      <div class="main">
+        <p>Пользователь номер {{ id }}</p>
+        <p>Имя: {{ name }}</p>
+        <p>Фамилия: {{ surn }}</p>
+        <button @click="edit">edit</button><br />
+      </div>
     </div>
-    <div class="main">
-      <button @click="$emit('remove', id)">remove</button>
-      <br />
+  </template>
+  <template v-else>
+    <div class="body">
+      <div class="main">
+        <input v-model="newName" />
+        <input v-model="newSurn" />
+        <button @click="save">save</button>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script>
 export default {
+  emits: ["change"],
   props: {
     id: Number,
     name: String,
     surn: String,
   },
-  emits: ["remove"],
   data() {
-    return {};
+    return {
+      isEdit: false,
+      newName: this.name,
+      newSurn: this.surn,
+    };
   },
-  methods: {},
+  methods: {
+    edit() {
+      this.isEdit = true;
+    },
+    save() {
+      this.isEdit = false;
+      this.$emit("change", this.id, this.newName, this.newSurn);
+    },
+  },
 };
 </script>

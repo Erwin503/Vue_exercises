@@ -1,16 +1,18 @@
 <template>
-    <Emploee
-      v-for="user in users"
-      :id="user.id"
-      :name="user.name"
-      :surn="user.surn"
-      @remove="remove"
-      :key="user.id"
-    />
+  <Employee
+    v-for="user in users"
+    :id="user.id"
+    :name="user.name"
+    :surn="user.surn"
+    :key="user.id"
+    @change="change"
+  />
+  <UserForm @add="add" />
 </template>
 
 <script>
 import Emploee from "./components/Emploee.vue";
+import UserForm from "./components/UserForm.vue";
 
 export default {
   data() {
@@ -36,11 +38,25 @@ export default {
   },
   components: {
     Emploee,
+    UserForm,
   },
   methods: {
-    remove(id) {
-      this.users = this.users.filter((user) => {
-        return user.id !== id;
+    add(name, surn) {
+      let id = this.users.length + 1;
+
+      this.users.push({
+        id,
+        name,
+        surn,
+      });
+    },
+    change(id, name, surn) {
+      this.users = this.users.map((user) => {
+        if (user.id === id) {
+          user.name = name;
+          user.surn = surn;
+        }
+        return user;
       });
     },
   },
