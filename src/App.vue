@@ -1,41 +1,34 @@
 <template>
-  <div class="body">
-    <div class="main">
-      <ul>
-        <li v-for="i in arr">{{ i }}</li>
-      </ul>
-    </div>
-    <div class="main"><button @click="add">add</button></div>
-    <div class="main"><button @click="del">del</button></div>
-    <div class="main"><button @click="strdel">strdel</button></div>
-    <div class="main"><button @click="sort">sort</button></div>
-    <div class="main"><button @click="rev">rev</button></div>
+
+  <button>PRESS ME</button>
+
+  <div id='cmd_head'>
+  <p>Console</p>
   </div>
+
+  <div id='cmd'>
+    <p>> Тест</p> 
+  </div>
+
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      arr: ["b", "a", "c"],
-    };
+	data() {
+	  return {
+	  }
   },
+
   methods: {
-    add: function () {
-      this.arr.push("xxx");
-    },
-    del: function () {
-      this.arr.pop();
-    },
-    strdel: function () {
-      this.arr.splice(this.arr.length - 2, 1);
-    },
-    sort: function () {
-      this.arr.sort();
-    },
-    rev: function () {
-      this.arr.reverse();
-    },
-  },
-};
+  }
+}
+
 </script>
+
+<style>
+  p{
+    font-family: Consolas;
+    font-size: 1.5em;
+    color: #54916c;
+}
+</style>
