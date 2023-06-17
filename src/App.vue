@@ -1,8 +1,8 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>Task 59</p>
-      <Emploee name="John" surn="Smit" age="25" />
+      <p>Task 60</p>
+      <Emploee :arr="['Ervin', 'Smith', 25]" />
     </div>
   </div>
 </template>
