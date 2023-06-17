@@ -1,27 +1,20 @@
 <template>
   <div class="body">
     <div class="main">
-      <p>Task 1</p>
-      <input type="checkbox" v-model="arr" value="Python" /> <span>Python</span
-      ><br />
-      <input type="checkbox" v-model="arr" value="Java" /> <span>Java</span
-      ><br />
-      <input type="checkbox" v-model="arr" value="JS" /> <span>JS</span><br />
-    </div>
-    <div class="main">
-      <input type="checkbox" v-model="arr" value="C++" /> <span>C++</span><br />
-      <input type="checkbox" v-model="arr" value="C" /> <span>C</span><br />
-      <input type="checkbox" v-model="arr" value="GO" /> <span>GO</span><br />
-      <input type="checkbox" v-model="arr" value="Ruby" /> <span>Ruby</span
-      ><br />
-    </div>
+      <p>Выберете родной язык.</p>
+      <input name="radio" type="radio" v-model="choice" value="rus" />
+      <span> Русский</span><br />
 
+      <input name="radio" type="radio" v-model="choice" value="tat" />
+      <span> Крымскотатарский</span><br />
+
+      <input name="radio" type="radio" v-model="choice" value="eng" />
+      <span> Английский</span><br />
+    </div>
     <div class="main">
-      <p>Количество: {{ arr.length }}</p>
-      <p>Cписок языков:</p>
-      <ul v-for="elem in arr">
-        <li>{{ elem }}</li>
-      </ul>
+      <p v-if="choice == 'rus'">Русский язык</p>
+      <p v-if="choice == 'tat'">Къырымтатар тили</p>
+      <p v-if="choice == 'eng'">English language</p>
     </div>
   </div>
 </template>
@@ -30,7 +23,7 @@
 export default {
   data() {
     return {
-      arr: [],
+      choice: "",
     };
   },
 
