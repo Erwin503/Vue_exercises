@@ -1,47 +1,48 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <Emploee
+      v-for="user in users"
+      :id="user.id"
+      :name="user.name"
+      :surn="user.surn"
+      @remove="remove"
+      :key="user.id"
+    />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import Emploee from "./components/Emploee.vue";
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+export default {
+  data() {
+    return {
+      users: [
+        {
+          id: 1,
+          name: "name1",
+          surn: "surn1",
+        },
+        {
+          id: 2,
+          name: "name2",
+          surn: "surn2",
+        },
+        {
+          id: 3,
+          name: "name3",
+          surn: "surn3",
+        },
+      ],
+    };
+  },
+  components: {
+    Emploee,
+  },
+  methods: {
+    remove(id) {
+      this.users = this.users.filter((user) => {
+        return user.id !== id;
+      });
+    },
+  },
+};
+</script>
