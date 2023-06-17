@@ -1,79 +1,8 @@
-<template>
-  <div id="cmd">
-    <p>Нажмите на элемент списка для удаления</p>
-    <table>
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>salary</th>
-        <th>age</th>
-      </tr>
-      <tr v-for="user in users" :key="user.id">
-        <template v-if="!user.isEdit">
-          <th>{{ user.id }}</th>
-          <th>{{ user.name }}</th>
-          <th>{{ user.salary }}</th>
-          <th>{{ user.age }}</th>
-          <th @click="removeItem(user.id)">del</th>
-          <th @click="editItem(user)">edit</th>
-        </template>
-
-        <template v-else>
-          <p>> Edit forms</p>
-          <span>Name: </span><input v-model="user.name" /><br />
-          <span>Salary: </span><input v-model="user.salary" /><br />
-          <span>Age: </span><input v-model="user.age" /><br />
-          <button @click="save(user)" id="save_but">save</button>
-        </template>
-      </tr>
-    </table>
-  </div>
-</template>
-
-<script>
-let date = new Date();
-
-export default {
-  data() {
-    return {
-      users: [
-        {
-          id: 1,
-          name: "name1",
-          salary: 100,
-          age: 30,
-          isEdit: false,
-        },
-        {
-          id: 2,
-          name: "name2",
-          salary: 200,
-          age: 40,
-          isEdit: false,
-        },
-        {
-          id: 3,
-          name: "name3",
-          salary: 300,
-          age: 50,
-          isEdit: false,
-        },
-      ],
-    };
-  },
-
-  methods: {
-    removeItem: function (id) {
-      this.users = this.users.filter((user) => {
-        return user.id !== id;
-      });
-    },
-    editItem: function (user) {
-      user.isEdit = true;
-    },
-    save: function (user) {
-      user.isEdit = false;
-    },
-  },
-};
-</script>
+//Работа с компонентами в Vue Если мы посмотрим на какой-нибудь сайт, то можем
+выделить на нем некоторые блоки: хедер, контент, сайдбар, футер. При создании
+сайта на Vue мы также можем использовать такие независимые блоки. Они позволят
+нам лучше организовать наш код и упростят его дальнейшую поддержку. Во Vue такие
+блоки называются компонентами. В крупных приложениях разделение на компоненты
+становится обязательным условием для сохранения управляемости процесса
+разработки Компоненты рекомендовано размещать в папке components. Каждый
+компонент в отдельном файле в виде модуля ES6.
