@@ -1,34 +1,23 @@
 <template>
 
-  <button>PRESS ME</button>
-
-  <div id='cmd_head'>
-  <p>Console</p>
+  <div class="main">
+    <div id="cmd_head">
+      <p>Console</p>
+    </div>
+    <div id="cmd">
+      <p :class="cssClasses">Тест</p>
+    </div>
   </div>
-
-  <div id='cmd'>
-    <p>> Тест</p> 
-  </div>
-
 </template>
 
 <script>
 export default {
-	data() {
-	  return {
-	  }
+  data() {
+    return {
+      cssClasses: "test",
+    };
   },
 
-  methods: {
-  }
-}
-
+  methods: {},
+};
 </script>
-
-<style>
-  p{
-    font-family: Consolas;
-    font-size: 1.5em;
-    color: #54916c;
-}
-</style>
