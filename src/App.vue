@@ -2,7 +2,7 @@
   <div class="body">
     <div class="main">
       <p>Task 60</p>
-      <Emploee :arr="['Ervin', 'Smith', 25]" />
+      <Emploee :name_person="name" :salary="salary" :age="age" />
     </div>
   </div>
 </template>
@@ -11,6 +11,13 @@
 import Emploee from "./components/Emploee.vue";
 
 export default {
+  data() {
+    return {
+      name: "John",
+      salary: 2000,
+      age: 25,
+    };
+  },
   components: {
     Emploee,
   },
