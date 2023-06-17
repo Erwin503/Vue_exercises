@@ -1,27 +1,17 @@
 <template>
   <div class="body">
     <div class="main">
-      <button @click="x">Button number 1</button>
-    </div>
-    <div class="main">
-      <button @click="y">Button number 2</button>
+      <button @click="$emit('func', 'Ervin', '3000$')">1</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  emits: ["first", "second"],
+  emits: ["func"],
   data() {
     return {};
   },
-  methods: {
-    x() {
-      this.$emit("first");
-    },
-    y() {
-      this.$emit("second");
-    },
-  },
+  methods: {},
 };
 </script>

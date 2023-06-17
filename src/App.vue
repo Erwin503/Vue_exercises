@@ -1,7 +1,5 @@
 <template>
-  <div id="cmd">
-    <Emploee @first="one" @second="two" />
-  </div>
+    <Emploee @func="func" />
 </template>
 
 <script>
@@ -15,11 +13,8 @@ export default {
     Emploee,
   },
   methods: {
-    one() {
-      alert("Первая функция");
-    },
-    two() {
-      alert("Вторая функция");
+    func(name, salary) {
+      console.log(name, salary);
     },
   },
 };
