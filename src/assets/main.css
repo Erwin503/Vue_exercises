@@ -42,13 +42,27 @@ p {
   color: black;
   font-size: large;
 }
-
-
-.done {
-  font-family: Consolas;
-  font-size: 1.5em;
-  color: rgb(4, 194, 118);
+textarea{
+  color: white;
 }
-p.hidden {
-  display: none;
+table{
+  border-collapse: collapse; 
+
+}
+th{
+  border: 1px solid grey;
+  color: grey;
+  padding: 0 10px;
+}
+#save_but, input{
+  font-size: 1.2em;
+  color: red;
+  background: none;
+  margin-bottom: 5px;
+  border: 1px solid red;
+}
+input{
+  border: none;
+  font-size: 1em;
+  margin: 5px 0; 
 }
