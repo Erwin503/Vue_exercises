@@ -1,14 +1,17 @@
 <template>
-  <p>Name: {{ name_person }}</p>
+  <p>Работник номер {{ id }}</p>
+  <p>Name: {{ name }}</p>
   <p>Salary: {{ salary }}$</p>
   <p>Age: {{ age }}</p>
+  <br />
 </template>
 
 <script>
 export default {
   props: {
-    name_person: String,
-    salary: String,
+    id: Number,
+    name: String,
+    salary: Number,
     age: Number,
   },
   data() {
